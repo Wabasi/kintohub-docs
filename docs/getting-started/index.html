@@ -186,7 +186,7 @@ app.listen(PORT, () =&gt; <span class="hljs-built_in">console</span>.log(<span c
 <p>We are going to use cURL for testing the endpoints</p>
 </blockquote>
 <p>calling <code>/auth</code> and passing it the client and secret should return a token</p>
-<pre><code class="hljs css languages- bash">curl -H <span class="hljs-string">"Content-Type: application/json"</span> -X POST -d <span class="hljs-string">'{"clientId":"&lt;clientId&gt;","clientSecret":"&lt;clientSecret&gt;"}'</span>http://api.kintohub.com/authorize
+<pre><code class="hljs css languages- bash">curl -H <span class="hljs-string">"Content-Type: application/json"</span> -X POST -d <span class="hljs-string">'{"clientId":"&lt;clientId&gt;","clientSecret":"&lt;clientSecret&gt;"}'</span> http://api.kintohub.com/authorize
 </code></pre>
 <p><strong>returns</strong></p>
 <pre><code class="hljs">{
