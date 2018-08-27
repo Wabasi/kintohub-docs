@@ -6,10 +6,10 @@ title: Getting Started
 
 This start-to-finish guide will walk you through creating a first microservice from scratch and getting it up and running on KintoHub. It should take you about 15-30min. Have fun!
 
-
 ## Hello World
 
-Getting  your app working with KintoHub is minimal. Here is a sample compatible node app
+Getting your app working with KintoHub is minimal. Here is a sample compatible node app
+
 ```javascript
 /**
  * @api {get} /hello hello world sample request
@@ -21,15 +21,16 @@ app.get('/hello', (req, res) =>
   })
 )
 ```
+
 ## Getting your code ready for KintoHub - overview
 
 Preparing your code to have it effortlessly work on KintoHub is very straightforward - here is a high-level of what it entails:
 
-1. Your code must be on GitHub
-2. Your code must have `Dockerfile`
-   * the command used to run the production version must be exposed in `Dockerfile` using `EXPOSE`
-3. The service must be listening to port `80` for production
-4. Your code must be documented with our version of apidoc ([detailed here](apidoc.md))
+1.  Your code must be on GitHub
+2.  Your code must have `Dockerfile`
+    * the command used to run the production version must be exposed in `Dockerfile` using `EXPOSE`
+3.  The service must be listening to port `80` for production
+4.  Your code must be documented with our version of apidoc ([detailed here](apidoc.md))
 
 > if you have to specify a hostname for the framework/library that you are using, please use 0.0.0.0. localhost and note that 127.0.0.1 won't work
 
@@ -152,7 +153,7 @@ _You can find all the different `Dockerfile` samples for all languages [here](do
 
 The interesting part is the last line, you need to update the entry point depending on the project you are using
 
-the only rule that endpoint must
+the only rules are that the endpoint must
 
 * expose the app on port `80`
 * if the hostname is required by the framework/lib then it has to be set to `0.0.0.0`
