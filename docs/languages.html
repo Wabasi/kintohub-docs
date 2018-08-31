@@ -14,6 +14,10 @@
                 var toggler = document.querySelector(togglerSelector);
                 var target = document.querySelector(targetSelector);
 
+                if (!toggler) {
+                  return;
+                }
+
                 toggler.onclick = function(event) {
                   event.preventDefault();
 
@@ -24,7 +28,7 @@
         </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/kintohub/kintohub-docs/edit/master/docs/languages.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">Languages</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="overview"></a><a href="#overview" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Overview</h2>
 <p>For each language we require a specific structure for your Dockerfile to be able to interpret it and make it run on our platform</p>
 <p>The Dockerfiles are language specific just like this one:</p>
-<pre><code class="hljs css languages- dockerfile"><span class="hljs-keyword">FROM</span> node:<span class="hljs-number">8.9</span>.<span class="hljs-number">4</span>
+<pre><code class="hljs css language-dockerfile"><span class="hljs-keyword">FROM</span> node:<span class="hljs-number">8.9</span>.<span class="hljs-number">4</span>
 
 <span class="hljs-keyword">RUN</span><span class="bash"> mkdir -p app
 </span>
@@ -54,7 +58,7 @@ however you will find a common behavior - set of rules for each language:</p>
 <h2><a class="anchor" aria-hidden="true" id="c-dotnet"></a><a href="#c-dotnet" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>C# / dotnet</h2>
 <p>We support dotnet 2.0</p>
 <p>Dockerfile:</p>
-<pre><code class="hljs css languages- dockerfile"><span class="hljs-keyword">FROM</span> microsoft/dotnet:<span class="hljs-number">2.0</span>-sdk AS build
+<pre><code class="hljs css language-dockerfile"><span class="hljs-keyword">FROM</span> microsoft/dotnet:<span class="hljs-number">2.0</span>-sdk AS build
 <span class="hljs-keyword">WORKDIR</span><span class="bash"> /app
 </span>
 <span class="hljs-comment"># Copy everything else and build</span>
@@ -81,7 +85,7 @@ however you will find a common behavior - set of rules for each language:</p>
 <p>We support Golang version 1.10</p>
 <p>See <a href="https://github.com/kintohub/go-examples">https://github.com/kintohub/go-examples</a> for a fully working example</p>
 <p>Dockerfile:</p>
-<pre><code class="hljs css languages- dockerfile"><span class="hljs-keyword">FROM</span> golang:<span class="hljs-number">1.10</span>.<span class="hljs-number">0</span>
+<pre><code class="hljs css language-dockerfile"><span class="hljs-keyword">FROM</span> golang:<span class="hljs-number">1.10</span>.<span class="hljs-number">0</span>
 
 <span class="hljs-keyword">WORKDIR</span><span class="bash"> /go/src/app
 </span>
@@ -100,7 +104,7 @@ however you will find a common behavior - set of rules for each language:</p>
 <p>We are supporting Java 8</p>
 <p>See <a href="https://github.com/kintohub/java-examples">https://github.com/kintohub/java-examples</a> for a fully working example</p>
 <p>Dockerfile:</p>
-<pre><code class="hljs css languages- dockerfile"><span class="hljs-keyword">FROM</span> maven:<span class="hljs-number">3</span>-jdk-<span class="hljs-number">8</span>-alpine AS build
+<pre><code class="hljs css language-dockerfile"><span class="hljs-keyword">FROM</span> maven:<span class="hljs-number">3</span>-jdk-<span class="hljs-number">8</span>-alpine AS build
 
 <span class="hljs-keyword">WORKDIR</span><span class="bash"> /app
 </span>
@@ -129,7 +133,7 @@ however you will find a common behavior - set of rules for each language:</p>
 <p>We are supporting NodeJS version 8.9.4</p>
 <p>See <a href="https://github.com/kintohub/node-examples">https://github.com/kintohub/node-examples</a> for a fully working example</p>
 <p>Dockerfile:</p>
-<pre><code class="hljs css languages- dockerfile"><span class="hljs-keyword">FROM</span> node:<span class="hljs-number">8.9</span>.<span class="hljs-number">4</span>
+<pre><code class="hljs css language-dockerfile"><span class="hljs-keyword">FROM</span> node:<span class="hljs-number">8.9</span>.<span class="hljs-number">4</span>
 
 <span class="hljs-keyword">RUN</span><span class="bash"> mkdir -p app
 </span>
@@ -154,7 +158,7 @@ however you will find a common behavior - set of rules for each language:</p>
 <p>We are supporting PHP 7.2</p>
 <p>See <a href="https://github.com/kintohub/php-examples">https://github.com/kintohub/php-examples</a> for a fully working example</p>
 <p>Dockerfile:</p>
-<pre><code class="hljs css languages- dockerfile"><span class="hljs-keyword">FROM</span> php:<span class="hljs-number">7.2</span>-cli
+<pre><code class="hljs css language-dockerfile"><span class="hljs-keyword">FROM</span> php:<span class="hljs-number">7.2</span>-cli
 
 <span class="hljs-keyword">RUN</span><span class="bash"> mkdir -p app
 </span><span class="hljs-keyword">WORKDIR</span><span class="bash"> /app
@@ -185,7 +189,7 @@ however you will find a common behavior - set of rules for each language:</p>
 <p>We are supporting Python 3.6.4</p>
 <p>See <a href="https://github.com/kintohub/python-examples">https://github.com/kintohub/python-examples</a> for a fully working example</p>
 <p>Dockerfile:</p>
-<pre><code class="hljs css languages- dockerfile"><span class="hljs-keyword">FROM</span> python:<span class="hljs-number">3.6</span>.<span class="hljs-number">4</span>
+<pre><code class="hljs css language-dockerfile"><span class="hljs-keyword">FROM</span> python:<span class="hljs-number">3.6</span>.<span class="hljs-number">4</span>
 
 <span class="hljs-keyword">RUN</span><span class="bash"> mkdir -p app
 </span>
@@ -219,7 +223,7 @@ however you will find a common behavior - set of rules for each language:</p>
 <p>We are supporting Ruby 2.5</p>
 <p>See <a href="https://github.com/kintohub/ruby-examples">https://github.com/kintohub/ruby-examples</a> for a fully working example</p>
 <p>Dockerfile:</p>
-<pre><code class="hljs css languages- dockerfile"><span class="hljs-keyword">FROM</span> ruby:<span class="hljs-number">2.5</span>
+<pre><code class="hljs css language-dockerfile"><span class="hljs-keyword">FROM</span> ruby:<span class="hljs-number">2.5</span>
 
 <span class="hljs-keyword">RUN</span><span class="bash"> mkdir -p app
 </span>
@@ -242,7 +246,7 @@ however you will find a common behavior - set of rules for each language:</p>
 <li>We are using <code>bundler</code> as dependency manager hence you will need a <code>Gemfile</code> in your repository to enable external packages</li>
 </ul>
 <p>Example Gemfile:</p>
-<pre><code class="hljs css languages- gemfile"><span class="hljs-built_in">source</span> <span class="hljs-string">'https://rubygems.org'</span>
+<pre><code class="hljs css language-gemfile"><span class="hljs-built_in">source</span> <span class="hljs-string">'https://rubygems.org'</span>
 gem <span class="hljs-string">'sinatra'</span>
 gem <span class="hljs-string">"json"</span>, <span class="hljs-string">"~&gt; 2.1"</span>
 </code></pre>

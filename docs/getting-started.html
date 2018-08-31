@@ -14,6 +14,10 @@
                 var toggler = document.querySelector(togglerSelector);
                 var target = document.querySelector(targetSelector);
 
+                if (!toggler) {
+                  return;
+                }
+
                 toggler.onclick = function(event) {
                   event.preventDefault();
 
@@ -25,7 +29,7 @@
 <p>This start-to-finish guide will walk you through creating a first microservice from scratch and getting it up and running on KintoHub. It should take you about 15-30min. Have fun!</p>
 <h2><a class="anchor" aria-hidden="true" id="hello-world"></a><a href="#hello-world" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Hello World</h2>
 <p>Getting  your app working with KintoHub is minimal. Here is a sample compatible node app</p>
-<pre><code class="hljs css languages- javascript"><span class="hljs-comment">/**
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">/**
  * @api {get} /hello hello world sample request
  * @apiName Sample
  */</span>
@@ -58,7 +62,7 @@ app.get(<span class="hljs-string">'/hello'</span>, (req, res) =&gt;
 <p>Let us create a simple hello world microservice locally and see how we would move that to a KintoHub to deploy and host it.</p>
 <h3><a class="anchor" aria-hidden="true" id="initialize-git-and-npm"></a><a href="#initialize-git-and-npm" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Initialize git and npm</h3>
 <p>We will start by initializing our <code>package.json</code> and install <code>express</code> <em>(v4.16.3)</em> by doing the following</p>
-<pre><code class="hljs css languages- bash">node -v <span class="hljs-comment"># must be 8.9.4</span>
+<pre><code class="hljs css language-bash">node -v <span class="hljs-comment"># must be 8.9.4</span>
 npm init -y
 npm install express
 </code></pre>
@@ -69,7 +73,7 @@ npm install express
 <p>Finally, create a new repository in GitHub, there are steps on how to connect to an existing repository in Github after you create one.</p>
 <h3><a class="anchor" aria-hidden="true" id="create-a-simple-hello-world-service"></a><a href="#create-a-simple-hello-world-service" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create a simple hello world service</h3>
 <p>create <code>index.js</code> and add the following</p>
-<pre><code class="hljs css languages- javascript"><span class="hljs-keyword">const</span> express = <span class="hljs-built_in">require</span>(<span class="hljs-string">'express'</span>)
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">const</span> express = <span class="hljs-built_in">require</span>(<span class="hljs-string">'express'</span>)
 <span class="hljs-keyword">const</span> app = express()
 <span class="hljs-keyword">const</span> PORT = process.env.PORT || <span class="hljs-string">'8000'</span>
 
@@ -97,7 +101,7 @@ app.listen(PORT, () =&gt; <span class="hljs-built_in">console</span>.log(<span c
 <p><em>you can read more about documenting your code to work with kintohub <a href="/docs/apidoc">here</a>.</em></p>
 <p>In order for your microservice to work with KintoHub and automatically generate user-friendly documentation for your endpoints, you need to comment your code in a way that follows apidoc standard.</p>
 <p>here is the updated <code>index.js</code> after documenting it</p>
-<pre><code class="hljs css languages- javascript"><span class="hljs-keyword">const</span> express = <span class="hljs-built_in">require</span>(<span class="hljs-string">'express'</span>)
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">const</span> express = <span class="hljs-built_in">require</span>(<span class="hljs-string">'express'</span>)
 <span class="hljs-keyword">const</span> app = express()
 <span class="hljs-keyword">const</span> PORT = process.env.PORT || <span class="hljs-string">'8000'</span>
 
@@ -122,7 +126,7 @@ app.listen(PORT, () =&gt; <span class="hljs-built_in">console</span>.log(<span c
 <p>you don't need to use docker locally for this</p>
 </blockquote>
 <p>create <code>Dockerfile</code> with the following</p>
-<pre><code class="hljs css languages- dockerfile"><span class="hljs-keyword">FROM</span> node:<span class="hljs-number">8.9</span>.<span class="hljs-number">4</span>
+<pre><code class="hljs css language-dockerfile"><span class="hljs-keyword">FROM</span> node:<span class="hljs-number">8.9</span>.<span class="hljs-number">4</span>
 
 <span class="hljs-keyword">RUN</span><span class="bash"> mkdir -p app
 </span>
@@ -147,7 +151,7 @@ app.listen(PORT, () =&gt; <span class="hljs-built_in">console</span>.log(<span c
 </ul>
 <p>For our example <code>npm run prod</code> is running <code>PORT=80 node index.js</code> which satisfies these two requirements</p>
 <h2><a class="anchor" aria-hidden="true" id="create-a-kintoblock-on-kintohub-from-the-service-we-just-created"></a><a href="#create-a-kintoblock-on-kintohub-from-the-service-we-just-created" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create a Kintoblock on KintoHub from the service we just created</h2>
-<p><em>For more details and screenshots about creating KintoBlocks read more <a href="creating-a-kintoblock.md">here</a></em></p>
+<p><em>For more details and screenshots about creating KintoBlocks read more <a href="/docs/kintoblocks#creating-a-kintoblock">here</a></em></p>
 <p>By this point, you should already have a GitHub repository that is compatible with KintoHub</p>
 <p>Next step is connecting your workspace to your GitHub account. Go to edit workspace and click on connect GitHub button.</p>
 <p>Now go to create Kintoblock page. Add a Kintoblock name <em>(name must be unique across all accounts)</em>, choose an existing repository and select the repository you just created. Set protocol to <code>HTTP</code> and language to <code>Node.js</code>.</p>
@@ -161,7 +165,7 @@ app.listen(PORT, () =&gt; <span class="hljs-built_in">console</span>.log(<span c
 <p>Kintoblocks can't be accessed directly. To access them we will need to deploy them through Applications. Therefore, if you tried to go to <code>https://api.kintohub.com/nodeexample/sample/hello</code> you will get an error.</p>
 </blockquote>
 <h3><a class="anchor" aria-hidden="true" id="tag-latest-commit"></a><a href="#tag-latest-commit" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Tag Latest Commit</h3>
-<p><em>For more details and screenshots about tagging latest commit read more <a href="tagging-a-commit.md">here</a></em></p>
+<p><em>For more details and screenshots about tagging latest commit read more <a href="/docs/kintoblocks#tagging-a-commit">here</a></em></p>
 <p>After creating the Kintoblock, when you are in the Kintoblock manage page, navigate to the branch that you added your code to. And go to the <strong>Commits</strong> section.</p>
 <p>Make sure that the last commit you had is in recent commits and wait until it successfully builds. <em>(Clicking the &quot;Refresh Latest&quot; button will grab an updated commit list)</em>.</p>
 <p>After it successfully builds click <code>Tag Latest Commit</code> this allows you to add a tag to that commit <em>(similar to how git works)</em> so you can select that particular tag when you are building an Application (before deploying it).</p>
@@ -186,7 +190,7 @@ app.listen(PORT, () =&gt; <span class="hljs-built_in">console</span>.log(<span c
 <p>We are going to use cURL for testing the endpoints</p>
 </blockquote>
 <p>calling <code>/auth</code> and passing it the client and secret should return a token</p>
-<pre><code class="hljs css languages- bash">curl -H <span class="hljs-string">"Content-Type: application/json"</span> -X POST -d <span class="hljs-string">'{"clientId":"&lt;clientId&gt;","clientSecret":"&lt;clientSecret&gt;"}'</span> https://api.kintohub.com/authorize
+<pre><code class="hljs css language-bash">curl -H <span class="hljs-string">"Content-Type: application/json"</span> -X POST -d <span class="hljs-string">'{"clientId":"&lt;clientId&gt;","clientSecret":"&lt;clientSecret&gt;"}'</span> https://api.kintohub.com/authorize
 </code></pre>
 <p><strong>returns</strong></p>
 <pre><code class="hljs">{
@@ -197,7 +201,7 @@ app.listen(PORT, () =&gt; <span class="hljs-built_in">console</span>.log(<span c
 </code></pre>
 <p>if we used that token and pass it as an Authorization header when we call any Kintoblock inside that Application it should work <em>(need to add 'Bearer' before the actual token)</em></p>
 <p>Finally, the following should work</p>
-<pre><code class="hljs css languages- bash">curl -H <span class="hljs-string">"Authorization: Bearer &lt;token&gt;"</span> https://api.kintohub.com/nodeexample/sample/hello
+<pre><code class="hljs css language-bash">curl -H <span class="hljs-string">"Authorization: Bearer &lt;token&gt;"</span> https://api.kintohub.com/nodeexample/sample/hello
 </code></pre>
 <p>Should return</p>
 <pre><code class="hljs">{
