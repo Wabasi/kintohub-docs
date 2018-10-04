@@ -22,6 +22,7 @@
 <url> <loc>https://kintohub.com/docs/kintoblocks</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://kintohub.com/docs/kintoblocks" /> </url>
 <url> <loc>https://kintohub.com/docs/languages</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://kintohub.com/docs/languages" /> </url>
 <url> <loc>https://kintohub.com/docs/managing-members</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://kintohub.com/docs/managing-members" /> </url>
+<url> <loc>https://kintohub.com/docs/mongo-db</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://kintohub.com/docs/mongo-db" /> </url>
 <url> <loc>https://kintohub.com/docs/product-roadmap</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://kintohub.com/docs/product-roadmap" /> </url>
 <url> <loc>https://kintohub.com/docs/release-notes</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://kintohub.com/docs/release-notes" /> </url>
 <url> <loc>https://kintohub.com/docs/repositories</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://kintohub.com/docs/repositories" /> </url>
