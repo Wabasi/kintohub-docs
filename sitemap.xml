@@ -45,6 +45,7 @@
 <url> <loc>https://kintohub.com/docs/token-session</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://kintohub.com/docs/token-session" /> </url>
 <url> <loc>https://kintohub.com/docs/usage-limit</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://kintohub.com/docs/usage-limit" /> </url>
 <url> <loc>https://kintohub.com/docs/use-during-alpha</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://kintohub.com/docs/use-during-alpha" /> </url>
+<url> <loc>https://kintohub.com/docs/view-logs</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://kintohub.com/docs/view-logs" /> </url>
 <url> <loc>https://kintohub.com/docs/what-is-an-application</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://kintohub.com/docs/what-is-an-application" /> </url>
 <url> <loc>https://kintohub.com/docs/workspace-intro</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://kintohub.com/docs/workspace-intro" /> </url>
 <url> <loc>https://kintohub.com/docs/workspaces</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://kintohub.com/docs/workspaces" /> </url>
