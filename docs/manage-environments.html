@@ -61,7 +61,7 @@
 <p>To promote an environment, follow the steps mentioned below:</p>
 <ol>
 <li><p>Open a <strong>Deployment</strong>.</p></li>
-<li><p>Move on to the sidebar in the <strong>Deployment Mange</strong> page.</p></li>
+<li><p>Move on to the sidebar in the <strong>Deployment Manage</strong> page.</p></li>
 <li><p>Click on the <strong>Promote</strong> button displayed for an environment.</p></li>
 <li><p>Click on the Deploy button displayed in Promote pop-up.</p>
 <p><img src="/docs/assets/promote-env.png" alt="Screenshot"></p></li>
@@ -82,7 +82,7 @@
 <p>To shut down an environment, follow the steps mentioned below:</p>
 <ol>
 <li><p>Open a <strong>Deployment</strong>.</p></li>
-<li><p>Click on the <strong>Shut Down</strong> button displayed on top right of the page.</p></li>
+<li><p>Click on the <strong>Shut Down</strong> button displayed on the top right of the page.</p></li>
 <li><p>Click on <strong>Shut Down Anyway</strong> button displayed in the shut down pop up.</p>
 <p><img src="/docs/assets/shutdown-deployment.png" alt="Screenshot"></p></li>
 </ol>
@@ -92,16 +92,41 @@
 <ol>
 <li><p>Open a <strong>Deployment</strong>.</p></li>
 <li><p>Select the environment from sidebar displayed in the <strong>Deployment Manage</strong> page.</p></li>
-<li><p>Click on the <strong>Delete Environment</strong> link dispalyed on the environment card and move on to <strong>Permanent Deletion</strong> section.</p></li>
+<li><p>Click on the <strong>Delete Environment</strong> link displayed on the environment card and move on to <strong>Permanent Deletion</strong> section.</p></li>
 <li><p>Click on <strong>Delete Environment</strong> button.</p></li>
 <li><p>Enter <strong>DELETE</strong> in the confirm field.</p></li>
 <li><p>Click on <strong>Delete Environment</strong> button.</p>
 <p><img src="/docs/assets/delete-environment.png" alt="Screenshot"></p>
 <blockquote>
-<p>Note: Environment will get deleted permanently. So any active deployments in this environment will be shutdown.</p>
+<p>Note: Environment will get deleted permanently. So any active deployments in this environment will be shut down.</p>
 </blockquote></li>
 </ol>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/deployment-logs"><span class="arrow-prev">← </span><span>Logs</span></a><a class="docs-next button" href="/docs/deployment-status-history"><span>Deployment Status</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#promote-an-environment">Promote an Environment</a></li><li><a href="#rollback-version">Rollback version</a></li><li><a href="#shut-down-an-environment">Shut Down an Environment</a></li><li><a href="#environment-deletion">Environment Deletion</a></li></ul></nav></div><div class="footer-background"><div class="line"></div><div class="footerWrapper wrapper"><footer><div class="content"><div class="footer"><div class="left"><ul class="unstyled-list"></ul><h6 class="byline">Copyright © 2019 KintoHub. All rights reserved</h6></div><div class="right"><ul class="social-icons unstyled-list"><li class="social-icon"><a href="https://twitter.com/kintohub" target="_blank" rel="noopener noreferrer"><img src="/img/footer-socials-twitter.svg" alt=""/></a></li><li class="social-icon"><a href="https://github.com/kintohub" target="_blank" rel="noopener noreferrer"><img src="/img/footer-socials-github.svg" alt=""/></a></li><li class="social-icon"><a href="https://www.linkedin.com/company/13376177/" target="_blank" rel="noopener noreferrer"><img src="/img/footer-socials-linkedin.svg" alt=""/></a></li></ul><a href="/"><div class="footer-logo"><img src="/img/logo-grey-single-color.svg" alt=""/></div></a></div></div></div></footer></div></div></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+<h2><a class="anchor" aria-hidden="true" id="basic-auth-for-websites"></a><a href="#basic-auth-for-websites" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Basic Auth for Websites</h2>
+<p><strong>Websites</strong> launched in KintoHub can protected from unknown intrusion by employing <strong>Basic Auth</strong>. This can be applied to both <strong>Static</strong> and <strong>Dynamic</strong> websites.</p>
+<p>To enable password protection for a website, follow the steps mentioned below:</p>
+<ol>
+<li><p>Open a <strong>Website Deployment</strong>.</p></li>
+<li><p>Make sure the Deployment is deployed successfully.</p></li>
+<li><p>Scroll down to the <strong>KintoBlocks</strong> section.</p></li>
+<li><p>Click on the <strong>Configure KintoBlocks</strong> button.</p></li>
+<li><p>Enable the toggle displayed for <strong>Password Protected</strong>.</p></li>
+<li><p>Enter the <code>Username</code> and <code>Password</code>.</p>
+<p><img src="/docs/assets/pwd_for_websites.png" alt="Screenshot"></p></li>
+<li><p>Click on the <strong>Save Changes</strong> button.</p></li>
+</ol>
+<blockquote>
+<p>Note: Make sure to redeploy the <strong>Website Deployment</strong> to apply the changes made.</p>
+</blockquote>
+<p>To launch a Website Deployment, follow the steps mentioned below:</p>
+<ol>
+<li><p>Open the <strong>Website Deployment</strong> for which you have set the <strong>Basic Auth</strong> credentials.</p></li>
+<li><p>Scroll down to <strong>KintoBlocks</strong> section displayed at the bottom of the <strong>Deployment Manage</strong> page.</p></li>
+<li><p>Click on <strong>Open</strong> button displayed for the <strong>Website KintoBlock</strong>.</p>
+<p><img src="/docs/assets/website_open_btn.png" alt="Screenshot"></p></li>
+<li><p>Enter the <code>Username</code> and <code>Password</code> to access the website.</p>
+<p><img src="/docs/assets/website_basic_auth.png" alt="Screenshot"></p></li>
+</ol>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/deployment-logs"><span class="arrow-prev">← </span><span>Logs</span></a><a class="docs-next button" href="/docs/deployment-status-history"><span>Deployment Status</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#promote-an-environment">Promote an Environment</a></li><li><a href="#rollback-version">Rollback version</a></li><li><a href="#shut-down-an-environment">Shut Down an Environment</a></li><li><a href="#environment-deletion">Environment Deletion</a></li><li><a href="#basic-auth-for-websites">Basic Auth for Websites</a></li></ul></nav></div><div class="footer-background"><div class="line"></div><div class="footerWrapper wrapper"><footer><div class="content"><div class="footer"><div class="left"><ul class="unstyled-list"></ul><h6 class="byline">Copyright © 2019 KintoHub. All rights reserved</h6></div><div class="right"><ul class="social-icons unstyled-list"><li class="social-icon"><a href="https://twitter.com/kintohub" target="_blank" rel="noopener noreferrer"><img src="/img/footer-socials-twitter.svg" alt=""/></a></li><li class="social-icon"><a href="https://github.com/kintohub" target="_blank" rel="noopener noreferrer"><img src="/img/footer-socials-github.svg" alt=""/></a></li><li class="social-icon"><a href="https://www.linkedin.com/company/13376177/" target="_blank" rel="noopener noreferrer"><img src="/img/footer-socials-linkedin.svg" alt=""/></a></li></ul><a href="/"><div class="footer-logo"><img src="/img/logo-grey-single-color.svg" alt=""/></div></a></div></div></div></footer></div></div></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;
