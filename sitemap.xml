@@ -21,6 +21,7 @@
 <url> <loc>https://kintohub.com/docs/environment-variables</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://kintohub.com/docs/environment-variables" /> </url>
 <url> <loc>https://kintohub.com/docs/environmental-parameters</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://kintohub.com/docs/environmental-parameters" /> </url>
 <url> <loc>https://kintohub.com/docs/environments</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://kintohub.com/docs/environments" /> </url>
+<url> <loc>https://kintohub.com/docs/examples/todo-list/tutorial</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://kintohub.com/docs/examples/todo-list/tutorial" /> </url>
 <url> <loc>https://kintohub.com/docs/feedback</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://kintohub.com/docs/feedback" /> </url>
 <url> <loc>https://kintohub.com/docs/getting-started</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://kintohub.com/docs/getting-started" /> </url>
 <url> <loc>https://kintohub.com/docs/helm-arguments</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://kintohub.com/docs/helm-arguments" /> </url>
